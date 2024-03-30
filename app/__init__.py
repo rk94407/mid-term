@@ -2,7 +2,7 @@ import os
 import pkgutil
 import importlib
 import sys
-from app.commands import CommandHandler, Command
+from commands import CommandHandler, Command
 from dotenv import load_dotenv
 import logging
 import logging.config

@@ -1,28 +1,23 @@
-# 
+from abc import ABC, abstractmethod
 
-commands = {
-    "start": start_app,
-    "help": show_help,
-    "quit": quit_app,
-    "hello": hello,
-    "bye": bye,
-    
-}
+class Command(ABC):
+    @abstractmethod
+    def execute(self):
+        pass
 
-def display_menu():
-    print("Available commands:")
-    for command in commands.keys():
-        print(f"- {command}")
+class CommandHandler:
+    def __init__(self):
+        self.commands = {}
 
+    def register_command(self, command_name: str, command: Command):
+        self.commands[command_name] = command
 
-commands["menu"] = display_menu
-
-
-def main():
-    display_menu()  
-    while True:
-        user_input = input("Enter command: ")
-        if user_input in commands:
-            commands[user_input]()  
+    def execute_command(self, command_name: str):
+        if command_name in self.commands:
+            self.commands[command_name].execute()
         else:
-            print("Unknown command. Type 'menu' to see available commands.")
+            print(f"No such command: {command_name}")
+        try:
+            self.commands[command_name].execute()
+        except KeyError:
+            print(f"No such command: {command_name}")
