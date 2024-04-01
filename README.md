@@ -17,6 +17,6 @@
 # 2. Menu list
  In menu list it will list the menus available to perform the operations for greeting.
 
-# 3. Perfored pytest, pytest --pylint, pytest --pylint --cov commands for testcases.
+# 3. Performed pytest, pytest --pylint, pytest --pylint --cov commands for testcases.
 
 https://drive.google.com/file/d/15GXhTza-zM9CARXIJGAFksHhxUKgBkMl/view?usp=sharing
